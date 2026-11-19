@@ -4,6 +4,17 @@ Can a microphone flag a fault in a known machine using only examples of its heal
 
 [Read the six-page IEEE report](docs/report/README.md) · [Download the report](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/mimii_report.pdf) · [Viva slides and speaker notes](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/MIMII_Final_Viva_Package.zip)
 
+## Download trained models
+
+The [trained-model release](https://github.com/AnAvenger9/mimii-acoustic-anomaly-detection/releases/tag/models-v1) contains the selected weights for all four machine types. To score a recording, download the final ensemble and open the inference notebook.
+
+| Download | Contents |
+|---|---|
+| [Final ensemble](https://github.com/AnAvenger9/mimii-acoustic-anomaly-detection/releases/download/models-v1/final-ensemble.zip) | ResNet-18, EfficientNet-B0, wide acoustic CNN and XGBoost at seed 42, with per-type normalization and per-ID fusion cutoffs. |
+| [Other reported fits](https://github.com/AnAvenger9/mimii-acoustic-anomaly-detection/releases/download/models-v1/other-reported-fits.zip) | MobileNet and compact CNN seeds 42–44, wide CNN seeds 43–44 and the compact mean-only ablation at seed 42. |
+
+[Score a WAV](notebooks/05_score_recording.ipynb) · [Setup and weight formats](REPRODUCE.md#run-the-trained-ensemble)
+
 ## Why these experiments?
 
 1. **Keep noise versions of the same sound together.** The 54,057 clips come from 18,019 recordings of fans, pumps, sliders and valves, each mixed at −6, 0 and +6 dB. Within each ID, split healthy source recordings into training, validation and test. Reserve every fault for test. Use the first microphone channel, a 1,024-sample Hann window and a 512-sample hop to produce 128 × 313 log-mel features. Fit each machine type’s per-band normalization on healthy training frames. [Preprocessing notebook](notebooks/03_audio_to_logmel.ipynb)

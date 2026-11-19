@@ -4,6 +4,24 @@
 
 Follow the [CPU notebook commands and table map](README.md#reproduce-the-report-tables). Notebook 01 pools the published ID counts and recalculates the individual detectors. Notebook 04 recalculates the combinations from clip-level scores and writes the per-machine and split-check outputs.
 
+## Run the trained ensemble
+
+From the repository root with Python 3.10+ and a compatible PyTorch/torchvision installation, run:
+
+```bash
+python -m pip install jupyterlab nbconvert ipykernel
+python -m nbconvert --to notebook --execute --stdout notebooks/00_runtime.ipynb > /dev/null
+python -m pip install -e '.[transfer,trees]'
+mkdir -p checkpoints/final-ensemble
+curl -fL https://github.com/AnAvenger9/mimii-acoustic-anomaly-detection/releases/download/models-v1/final-ensemble.zip -o checkpoints/final-ensemble.zip
+unzip -o checkpoints/final-ensemble.zip -d checkpoints/final-ensemble
+jupyter lab notebooks/05_score_recording.ipynb
+```
+
+In the input cell, set the ten-second 16 kHz WAV path, machine type and known ID. The notebook loads the three trained CNNs and the boosted tree, applies the archived frontend and calibration, and prints the fused score, cutoff and alarm. A sample path points to a recording in the original MIMII fan download. CPU inference works without ImageNet downloads.
+
+Each release ZIP contains its own manifest, machine-specific normalizers and per-ID single-model cutoffs. The final ZIP also includes per-member log-score means, standard deviations and fused cutoffs. CNN files are PyTorch state dictionaries loadable with `weights_only=True`; tree files use XGBoost UBJ. For the compact mean-only weights use `AcousticResidualStatsCNN(include_std=False)`. Each manifest records the class mapping, path, seed and SHA-256 of each model.
+
 ## Train from the original audio
 
 Run from the repository root on Linux. For the CNN training scripts, use a CUDA-enabled PyTorch installation with BF16 support and its matching torchvision build. The recorded environment used Python 3.13, torch 2.14.1+cu130, torchvision 0.29.1+cu130, NumPy 2.3.5, librosa 1.0.0, scikit-learn 1.9.1 and XGBoost 3.1.2. Start with a fresh environment and select the appropriate [PyTorch installation](https://pytorch.org/get-started/locally/) for your GPU driver.
