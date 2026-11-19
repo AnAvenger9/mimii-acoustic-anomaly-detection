@@ -12,7 +12,7 @@ The four-model ensemble caught **7,989 of 9,900 faulty clips** and flagged **654
 
 ## Read the study
 
-[Final project report (PDF, six pages)](docs/mimii_report.pdf)
+[Read the six-page report](docs/report/README.md) · [Download the PDF](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/mimii_report.pdf)
 
 1. [From audio to a spectrogram](notebooks/03_audio_to_logmel.ipynb). See how a ten-second recording becomes the input to a CNN.
 2. [Model architectures](notebooks/02_model_architectures.ipynb). Inspect the three pretrained backbones and two custom networks.
