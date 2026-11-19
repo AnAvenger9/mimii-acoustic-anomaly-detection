@@ -1,8 +1,8 @@
 # Industrial machine fault detection from sound
 
-Can a classifier trained to recognize a healthy machine detect when it sounds faulty? This study uses the original MIMII recordings of fans, pumps, sliders and valves. A five-CNN ensemble achieved **93.62% ROC-AUC** and caught **7,592 of 9,900 faulty test clips**. It raised 720 false alarms on 8,814 healthy clips.
+Can a classifier trained to recognize a healthy machine detect when it sounds faulty? This study uses the original MIMII recordings of fans, pumps, sliders and valves. The original five-CNN ensemble achieved **93.62% ROC-AUC**. In a follow-up comparison of 57 ensembles, ResNet-18, EfficientNet-B0, the wide custom CNN and XGBoost together achieved **95.66% ROC-AUC**. They detected **7,989 of 9,900 faulty clips** and raised **654 false alarms on 8,814 healthy clips**.
 
-**Start with the [results notebook](notebooks/01_reproduce_results.ipynb).** Its saved output is visible on GitHub. Run its cells to recompute the table on a CPU from the included training and test scores. The [model walkthrough](notebooks/02_model_architectures.ipynb) builds all five CNNs and measures their parameter counts. The [preprocessing walkthrough](notebooks/03_audio_to_logmel.ipynb) demonstrates the exact feature transformation on a generated audio example. The [notebook index](notebooks/README.md) links every Python file to its cell-by-cell companion.
+**Start with the [results notebook](notebooks/01_reproduce_results.ipynb).** Its saved output is visible on GitHub. Run its cells to recompute the table on a CPU from the included training and test scores. The [model walkthrough](notebooks/02_model_architectures.ipynb) builds all five CNNs and measures their parameter counts. The [preprocessing walkthrough](notebooks/03_audio_to_logmel.ipynb) demonstrates the exact feature transformation on a generated audio example. The [notebook index](notebooks/README.md) organizes all implementation and test notebooks by topic. The [ensemble comparison](notebooks/04_ensemble_combinations.ipynb) recomputes the follow-up study from the saved scores. The [ensemble findings](notebooks/05_ensemble_findings.ipynb) show the results by machine and the source-grouped selection check.
 
 | Model | Seeds | AUC (%) | Partial AUC (%) | Fault recall (%) | False alarms (%) |
 |---|---:|---:|---:|---:|---:|
@@ -13,17 +13,21 @@ Can a classifier trained to recognize a healthy machine detect when it sounds fa
 | Wide custom CNN | 3 | 87.94 | 82.06 | 63.67 | 6.31 |
 | Five-CNN ensemble | 1 | 93.62 | 88.79 | 76.69 | 8.17 |
 | XGBoost | 1 | 91.12 | 82.45 | 72.37 | 7.73 |
+| ResNet-18 + EfficientNet-B0 + XGBoost | 1 | 95.58 | 90.08 | 80.66 | 7.51 |
+| ResNet-18 + EfficientNet-B0 + wide CNN + XGBoost | 1 | 95.66 | 90.55 | 80.70 | 7.42 |
 
-## Reproduce the table on a CPU
+The last two rows come from an exploratory search on the same test recordings. When selected by partial AUC on one source-grouped half, the four-member ensemble achieved 90.42% partial AUC on the other half. [All combinations and per-machine results](docs/results/ensemble_subsets_seed42/RESULTS.md)
+
+## Reproduce the tables on a CPU
 
 Run these commands from the repository root in a Python 3.10+ environment.
 
 ```bash
-python -m pip install numpy scikit-learn
-python src/mimii/reproduce_results.py
+python -m pip install numpy scikit-learn jupyterlab ipykernel
+jupyter lab notebooks
 ```
 
-To run the results notebook interactively, install JupyterLab into the same environment and run `jupyter lab`. The two other walkthroughs use the full software environment described in the [reproduction guide](REPRODUCE.md).
+Open notebook 01 or 04 and choose **Run All Cells**. Notebook 01 reproduces the original results. Notebook 04 evaluates every combination. To retrain the models from audio, follow the [GPU reproduction guide](REPRODUCE.md).
 
 ## Experimental design
 

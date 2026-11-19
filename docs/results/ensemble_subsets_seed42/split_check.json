@@ -1,0 +1,54 @@
+{
+  "seed": 42,
+  "selection_half_clips": 9276,
+  "check_half_clips": 9438,
+  "selected_by_first_half_pauc": {
+    "members": "ResNet-18 + EfficientNet-B0 + Wide CNN + XGBoost",
+    "size": 4,
+    "cnn_parameters": 16471352,
+    "includes_xgboost": true,
+    "auc": 0.9569474417135714,
+    "pauc": 0.9084995027034016,
+    "recall": 0.806920556920557,
+    "fpr": 0.07399817850637523,
+    "tp": 3941,
+    "fn": 943,
+    "fp": 325,
+    "tn": 4067
+  },
+  "second_half_results": {
+    "MobileNetV3-Small + ResNet-18 + EfficientNet-B0 + Compact CNN + Wide CNN": {
+      "auc": 0.934345420156529,
+      "pauc": 0.884796139095779,
+      "recall": 0.768341307814992,
+      "fpr": 0.0807327001356852,
+      "tp": 3854,
+      "fn": 1162,
+      "fp": 357,
+      "tn": 4065
+    },
+    "MobileNetV3-Small + ResNet-18 + EfficientNet-B0 + Compact CNN + Wide CNN + XGBoost": {
+      "auc": 0.9480540101969575,
+      "pauc": 0.895500430569253,
+      "recall": 0.8046251993620415,
+      "fpr": 0.08344640434192672,
+      "tp": 4036,
+      "fn": 980,
+      "fp": 369,
+      "tn": 4053
+    },
+    "ResNet-18 + EfficientNet-B0 + Wide CNN + XGBoost": {
+      "auc": 0.9565349718904832,
+      "pauc": 0.9042419419110042,
+      "recall": 0.8070175438596491,
+      "fpr": 0.07440072365445499,
+      "tp": 4048,
+      "fn": 968,
+      "fp": 329,
+      "tn": 4093
+    }
+  },
+  "split": "sha256(subset-study-v1/ + machine/source_recording_key), first byte < 128 selects first half",
+  "caveat": "Both halves belong to the project's previously inspected test set.",
+  "evidence_sha256": "461433d561a5ed8175094596a928f003b5a5dd28edc671cdbc033a90950fd40f"
+}
