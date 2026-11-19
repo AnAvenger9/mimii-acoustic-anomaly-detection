@@ -7,7 +7,6 @@ Six seed-42 predictors supplied 57 ensembles and six individual references. We s
 The four-member combination ranked first by pAUC on a group-preserving selection half (9,276 clips). It achieved 90.42% pAUC on the remaining 9,438 clips, compared with 88.48% for the original ensemble. Both halves come from the previously inspected project test split. Results describe a single seed.
 
 - [Recompute the comparison from clip scores](../../../notebooks/04_ensemble_combinations.ipynb)
-- [View the operating points and results by machine](../../../notebooks/05_ensemble_findings.ipynb)
 - [All 63 configurations](all_combinations.csv)
 - [Results by machine](by_machine.csv)
 - [Grouped selection and check](split_check.json)

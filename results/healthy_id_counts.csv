@@ -1,0 +1,29 @@
+model,machine,split,clips,correct
+MobileNetV3-Small,fan,validation,1218,1213
+ResNet-18,fan,validation,1218,1218
+EfficientNet-B0,fan,validation,1218,1218
+Compact CNN,fan,validation,1218,1218
+Wide CNN,fan,validation,1218,1218
+MobileNetV3-Small,pump,validation,1119,1103
+ResNet-18,pump,validation,1119,1118
+EfficientNet-B0,pump,validation,1119,1119
+Compact CNN,pump,validation,1119,1118
+Wide CNN,pump,validation,1119,1118
+MobileNetV3-Small,slider,validation,954,937
+ResNet-18,slider,validation,954,953
+EfficientNet-B0,slider,validation,954,953
+Compact CNN,slider,validation,954,940
+Wide CNN,slider,validation,954,950
+MobileNetV3-Small,valve,validation,1104,1097
+ResNet-18,valve,validation,1104,1104
+EfficientNet-B0,valve,validation,1104,1104
+Compact CNN,valve,validation,1104,1104
+Wide CNN,valve,validation,1104,1104
+LDA,fan,healthy test,2442,2435
+Shuffled LDA,fan,healthy test,2442,608
+LDA,pump,healthy test,2247,2229
+Shuffled LDA,pump,healthy test,2247,572
+LDA,slider,healthy test,1914,1894
+Shuffled LDA,slider,healthy test,1914,614
+LDA,valve,healthy test,2211,2105
+Shuffled LDA,valve,healthy test,2211,637
