@@ -14,6 +14,8 @@ The four-model ensemble caught **7,989 of 9,900 faulty clips** and flagged **654
 
 [Read the six-page report](docs/report/README.md) · [Download the PDF](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/mimii_report.pdf)
 
+[Download the five-minute viva presentation (ZIP)](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/MIMII_Final_Viva_Package.zip) includes the PowerPoint, PDF slides, and timed speaker script.
+
 1. [From audio to a spectrogram](notebooks/03_audio_to_logmel.ipynb). See how a ten-second recording becomes the input to a CNN.
 2. [Model architectures](notebooks/02_model_architectures.ipynb). Inspect the three pretrained backbones and two custom networks.
 3. [Reproduce the fault-detection results](notebooks/01_reproduce_results.ipynb). Recalculate AUC, partial AUC, recall and false alarms from the saved predictions.
