@@ -1,0 +1,9 @@
+{
+  "state": "passed",
+  "checked_models": 8,
+  "checked_train_scores": 61896,
+  "checked_test_scores": 37428,
+  "healthy_validation_selection_checked": true,
+  "source_snapshots_and_model_hashes_checked": true,
+  "thresholds_and_metrics_recomputed": true
+}

@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "members": {
+    "mobilenet": "mobilenet_v3_small_full_dataset/{machine}/seed_42",
+    "resnet18": "cnn_optimization_12epochs/resnet18/lr_1/{machine}",
+    "efficientnet_b0": "cnn_optimization_12epochs/efficientnet_b0/lr_1/{machine}",
+    "custom": "acoustic_residual_stats_cnn/stats/{machine}/seed_42",
+    "large_custom": "large_acoustic_residual_stats_cnn/stats/{machine}/seed_42"
+  },
+  "fusion": "equal mean of log anomaly scores standardized per member and ID on training normals",
+  "tree_features": "128 temporal means and 128 population SDs of train-normalized log-mel bands",
+  "tree_params": {
+    "objective": "multi:softprob",
+    "num_class": 4,
+    "tree_method": "hist",
+    "max_depth": 4,
+    "eta": 0.1,
+    "nthread": 2,
+    "seed": 42,
+    "max_bin": 128
+  },
+  "boosting_rounds": 100,
+  "xgboost": "3.1.2",
+  "threshold_quantile": 0.95,
+  "manifest_sha256": {
+    "fan": "c5d052e8904ca92bb0937f6363f7b11d94e453f6ef518a2019f4d50cfd41fb3b",
+    "pump": "b978ec40e352dcd0d90281f9e88003946afc939585b377ca4fc7f5ae1dd7a1e3",
+    "slider": "9def7f618ecc7a8770fbdac9b6471b67592f5e9c125f13077bcb1ef96c8fee43",
+    "valve": "35b45a86e323bffc9c13a8059c3761d3d18bce4138aeaa3663f30157037f4a2e"
+  },
+  "code_sha256": "f0d5dae954daf9b1a66e3bdae83405f8abef5475c1b21fcfd956b5a68e875166"
+}

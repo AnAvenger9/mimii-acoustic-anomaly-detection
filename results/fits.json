@@ -1,0 +1,72 @@
+[
+  {
+    "key": "fit_00",
+    "model": "MobileNetV3-Small",
+    "seed": 42
+  },
+  {
+    "key": "fit_01",
+    "model": "MobileNetV3-Small",
+    "seed": 43
+  },
+  {
+    "key": "fit_02",
+    "model": "MobileNetV3-Small",
+    "seed": 44
+  },
+  {
+    "key": "fit_03",
+    "model": "ResNet-18",
+    "seed": 42
+  },
+  {
+    "key": "fit_04",
+    "model": "EfficientNet-B0",
+    "seed": 42
+  },
+  {
+    "key": "fit_05",
+    "model": "Compact CNN",
+    "seed": 42
+  },
+  {
+    "key": "fit_06",
+    "model": "Compact CNN",
+    "seed": 43
+  },
+  {
+    "key": "fit_07",
+    "model": "Compact CNN",
+    "seed": 44
+  },
+  {
+    "key": "fit_08",
+    "model": "Compact mean-only",
+    "seed": 42
+  },
+  {
+    "key": "fit_09",
+    "model": "Wide CNN",
+    "seed": 42
+  },
+  {
+    "key": "fit_10",
+    "model": "Wide CNN",
+    "seed": 43
+  },
+  {
+    "key": "fit_11",
+    "model": "Wide CNN",
+    "seed": 44
+  },
+  {
+    "key": "fit_12",
+    "model": "CNN ensemble",
+    "seed": 42
+  },
+  {
+    "key": "fit_13",
+    "model": "XGBoost",
+    "seed": 42
+  }
+]

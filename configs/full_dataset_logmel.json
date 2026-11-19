@@ -1,0 +1,28 @@
+{
+  "data_dir": "data",
+  "output_dir": "features/full_dataset_logmel128_seed42",
+  "machine_types": ["fan", "pump", "slider", "valve"],
+  "snr_levels_db": [0, -6, 6],
+  "reuse_caches": {
+    "fan_0db": "features/fan_0db_128mel_seed42",
+    "fan_minus6db": "features/fan_minus6db_128mel_seed42",
+    "fan_plus6db": "features/fan_plus6db_128mel_seed42"
+  },
+  "frontend": {
+    "seed": 42,
+    "validation_fraction": 0.1,
+    "test_normal_fraction": 0.2,
+    "sample_rate": 16000,
+    "duration_seconds": 10.0,
+    "channel": 0,
+    "n_fft": 1024,
+    "hop_length": 512,
+    "n_mels": 128,
+    "fmin": 0.0,
+    "fmax": 8000.0,
+    "center": true,
+    "pad_mode": "reflect",
+    "context_frames": 5,
+    "workers": 3
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "resnet18": {
+    "selected_trial": 1,
+    "candidates": [
+      {
+        "trial": 0,
+        "macro_validation_loss": 0.007741514667913523
+      },
+      {
+        "trial": 1,
+        "macro_validation_loss": 0.006876801188650203
+      }
+    ],
+    "criterion": "mean best healthy-validation cross-entropy over machine types"
+  },
+  "efficientnet_b0": {
+    "selected_trial": 1,
+    "candidates": [
+      {
+        "trial": 0,
+        "macro_validation_loss": 0.0179061938728855
+      },
+      {
+        "trial": 1,
+        "macro_validation_loss": 0.010468846721329866
+      }
+    ],
+    "criterion": "mean best healthy-validation cross-entropy over machine types"
+  }
+}

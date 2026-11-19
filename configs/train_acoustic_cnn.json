@@ -1,0 +1,16 @@
+{
+  "feature_root": "features/full_dataset_logmel128_seed42",
+  "output_dir": "runs/acoustic_residual_stats_cnn",
+  "machine_types": ["fan", "pump", "slider", "valve"],
+  "seeds": [42, 43, 44],
+  "ablation_seed": 42,
+  "epochs": 25,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "patience": 7,
+  "min_delta": 0.0001,
+  "threshold_quantile": 0.95,
+  "wall_seconds": 6900,
+  "finalization_reserve_seconds": 180
+}

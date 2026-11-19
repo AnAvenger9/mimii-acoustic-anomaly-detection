@@ -1,0 +1,17 @@
+{
+  "feature_root": "features/full_dataset_logmel128_seed42",
+  "output_dir": "runs/cnn_optimization_2h",
+  "architectures": ["resnet18", "efficientnet_b0"],
+  "machine_types": ["fan", "pump", "slider", "valve"],
+  "seed": 42,
+  "backbone_learning_rates": [0.0001, 0.0003],
+  "head_lr_multiplier": 3.0,
+  "screening_epochs": 3,
+  "final_epochs": 6,
+  "warmup_epochs": 1,
+  "batch_sizes": {"resnet18": 64, "efficientnet_b0": 32},
+  "wall_seconds": 6600,
+  "evaluation_reserve_seconds": 900,
+  "weight_decay": 0.0001,
+  "threshold_quantile": 0.95
+}

@@ -1,0 +1,85 @@
+{
+  "state": "passed",
+  "verified_runs": 12,
+  "expected_runs": 12,
+  "verified_test_scores": 56142,
+  "verified_training_scores": 92844,
+  "source_snapshots_and_checkpoint_hashes_verified": true,
+  "thresholds_recomputed_from_training_normals": true,
+  "metrics_recomputed_from_saved_scores": true,
+  "checkpoint_selection_verified": true,
+  "runs": [
+    {
+      "machine_type": "fan",
+      "seed": 42,
+      "macro_auc": 0.7902074103190458,
+      "macro_pauc": 0.7130947504712043
+    },
+    {
+      "machine_type": "fan",
+      "seed": 43,
+      "macro_auc": 0.7791945433076458,
+      "macro_pauc": 0.7404571642151674
+    },
+    {
+      "machine_type": "fan",
+      "seed": 44,
+      "macro_auc": 0.7892497437125136,
+      "macro_pauc": 0.7454827881451497
+    },
+    {
+      "machine_type": "pump",
+      "seed": 42,
+      "macro_auc": 0.8689015875524094,
+      "macro_pauc": 0.7927259628575452
+    },
+    {
+      "machine_type": "pump",
+      "seed": 43,
+      "macro_auc": 0.8665603578810401,
+      "macro_pauc": 0.7805154533278285
+    },
+    {
+      "machine_type": "pump",
+      "seed": 44,
+      "macro_auc": 0.869922150232216,
+      "macro_pauc": 0.8015527592789771
+    },
+    {
+      "machine_type": "slider",
+      "seed": 42,
+      "macro_auc": 0.9476282193984421,
+      "macro_pauc": 0.8908675534613951
+    },
+    {
+      "machine_type": "slider",
+      "seed": 43,
+      "macro_auc": 0.9592812885921123,
+      "macro_pauc": 0.8976729180253473
+    },
+    {
+      "machine_type": "slider",
+      "seed": 44,
+      "macro_auc": 0.9622827990169521,
+      "macro_pauc": 0.8791525602368063
+    },
+    {
+      "machine_type": "valve",
+      "seed": 42,
+      "macro_auc": 0.9572745865154214,
+      "macro_pauc": 0.8994616773378051
+    },
+    {
+      "machine_type": "valve",
+      "seed": 43,
+      "macro_auc": 0.8362866945160828,
+      "macro_pauc": 0.8273232433203507
+    },
+    {
+      "machine_type": "valve",
+      "seed": 44,
+      "macro_auc": 0.9259312920938131,
+      "macro_pauc": 0.8788146332382686
+    }
+  ]
+}

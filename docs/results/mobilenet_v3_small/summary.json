@@ -1,0 +1,254 @@
+{
+  "aggregation": "Average AUC/pAUC over 48 machine-type/ID/SNR cells within each seed, then mean/population SD/variance across seeds",
+  "macro_auc": {
+    "mean": 0.8267584917609905,
+    "n": 3,
+    "std": 0.00154397661164394,
+    "variance": 2.383863777303502e-06
+  },
+  "macro_pauc": {
+    "mean": 0.7488960059488313,
+    "n": 3,
+    "std": 0.0034966607610757245,
+    "variance": 1.2226636478046665e-05
+  },
+  "model": "ImageNet-pretrained MobileNetV3-Small, fine-tuned for normal machine ID",
+  "pauc_convention": "sklearn standardized partial AUC, max_fpr=0.1; chance=0.5",
+  "per_machine": {
+    "fan": {
+      "macro_auc": {
+        "mean": 0.7742829817929707,
+        "n": 3,
+        "std": 0.005772009366187939,
+        "variance": 3.33160921233613e-05
+      },
+      "macro_pauc": {
+        "mean": 0.7303934161905777,
+        "n": 3,
+        "std": 0.004329640742584621,
+        "variance": 1.8745788959848706e-05
+      }
+    },
+    "pump": {
+      "macro_auc": {
+        "mean": 0.7999032753770333,
+        "n": 3,
+        "std": 0.005417121137771266,
+        "variance": 2.934520142128826e-05
+      },
+      "macro_pauc": {
+        "mean": 0.7550162873916938,
+        "n": 3,
+        "std": 0.006032636052529014,
+        "variance": 3.639269774227285e-05
+      }
+    },
+    "slider": {
+      "macro_auc": {
+        "mean": 0.8130334653065839,
+        "n": 3,
+        "std": 0.0016091699063187986,
+        "variance": 2.5894277874020512e-06
+      },
+      "macro_pauc": {
+        "mean": 0.6961811829239153,
+        "n": 3,
+        "std": 0.0009731211600729265,
+        "variance": 9.469647921816782e-07
+      }
+    },
+    "valve": {
+      "macro_auc": {
+        "mean": 0.9198142445673735,
+        "n": 3,
+        "std": 0.0013504366949636556,
+        "variance": 1.8236792671043615e-06
+      },
+      "macro_pauc": {
+        "mean": 0.8139931372891387,
+        "n": 3,
+        "std": 0.009956186821561826,
+        "variance": 9.912565602584137e-05
+      }
+    }
+  },
+  "per_seed": [
+    {
+      "macro_auc": 0.8250636708960765,
+      "macro_pauc": 0.7520740159420836,
+      "seed": 42
+    },
+    {
+      "macro_auc": 0.8287981615372332,
+      "macro_pauc": 0.7505880288519894,
+      "seed": 43
+    },
+    {
+      "macro_auc": 0.8264136428496617,
+      "macro_pauc": 0.7440259730524211,
+      "seed": 44
+    }
+  ],
+  "per_snr": {
+    "-6": {
+      "macro_auc": {
+        "mean": 0.8137784633521837,
+        "n": 3,
+        "std": 0.002813658681330868,
+        "variance": 7.916675175028559e-06
+      },
+      "macro_pauc": {
+        "mean": 0.7118357854738919,
+        "n": 3,
+        "std": 0.004715491529827017,
+        "variance": 2.223586036787034e-05
+      }
+    },
+    "0": {
+      "macro_auc": {
+        "mean": 0.8374036537428267,
+        "n": 3,
+        "std": 0.0023099779895220792,
+        "variance": 5.335998312076468e-06
+      },
+      "macro_pauc": {
+        "mean": 0.7706650456465969,
+        "n": 3,
+        "std": 0.0033878577329760494,
+        "variance": 1.1477580018885616e-05
+      }
+    },
+    "6": {
+      "macro_auc": {
+        "mean": 0.8290933581879609,
+        "n": 3,
+        "std": 0.001271015444307696,
+        "variance": 1.6154802596686896e-06
+      },
+      "macro_pauc": {
+        "mean": 0.7641871867260054,
+        "n": 3,
+        "std": 0.0032976805225433605,
+        "variance": 1.087469682876185e-05
+      }
+    }
+  },
+  "scope": "All SNRs represented in training; held-out source recordings; no unseen-type/fault-category claim",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "thresholds": "Per-type/ID training-normal 95th percentile; fixed across evaluation SNRs",
+  "uncertainty": "Initialization variability on one fixed split; not a confidence interval",
+  "selected_checkpoints": [
+    {
+      "machine_type": "fan",
+      "seed": 42,
+      "selected_epoch": 17,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9958949096880131,
+      "selected_validation_loss": 0.013399088914744584,
+      "elapsed_seconds": 442.16
+    },
+    {
+      "machine_type": "fan",
+      "seed": 43,
+      "selected_epoch": 19,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9991789819376026,
+      "selected_validation_loss": 0.009500857973339683,
+      "elapsed_seconds": 434.13
+    },
+    {
+      "machine_type": "fan",
+      "seed": 44,
+      "selected_epoch": 14,
+      "trained_epochs": 19,
+      "selected_validation_id_accuracy": 0.9983579638752053,
+      "selected_validation_loss": 0.014218950792707184,
+      "elapsed_seconds": 404.04
+    },
+    {
+      "machine_type": "pump",
+      "seed": 42,
+      "selected_epoch": 15,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9857015192135835,
+      "selected_validation_loss": 0.04646134076770405,
+      "elapsed_seconds": 391.32
+    },
+    {
+      "machine_type": "pump",
+      "seed": 43,
+      "selected_epoch": 18,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9919571045576407,
+      "selected_validation_loss": 0.032194065389520056,
+      "elapsed_seconds": 388.96
+    },
+    {
+      "machine_type": "pump",
+      "seed": 44,
+      "selected_epoch": 16,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9901697944593387,
+      "selected_validation_loss": 0.04054041134020555,
+      "elapsed_seconds": 388.22
+    },
+    {
+      "machine_type": "slider",
+      "seed": 42,
+      "selected_epoch": 18,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9821802935010482,
+      "selected_validation_loss": 0.0755528807936491,
+      "elapsed_seconds": 336.83
+    },
+    {
+      "machine_type": "slider",
+      "seed": 43,
+      "selected_epoch": 17,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9863731656184487,
+      "selected_validation_loss": 0.06679929333243363,
+      "elapsed_seconds": 334.05
+    },
+    {
+      "machine_type": "slider",
+      "seed": 44,
+      "selected_epoch": 17,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9842767295597484,
+      "selected_validation_loss": 0.06311839863180697,
+      "elapsed_seconds": 334.35
+    },
+    {
+      "machine_type": "valve",
+      "seed": 42,
+      "selected_epoch": 16,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9936594202898551,
+      "selected_validation_loss": 0.017519095988709654,
+      "elapsed_seconds": 385.16
+    },
+    {
+      "machine_type": "valve",
+      "seed": 43,
+      "selected_epoch": 12,
+      "trained_epochs": 17,
+      "selected_validation_id_accuracy": 0.9909420289855072,
+      "selected_validation_loss": 0.021198055625090077,
+      "elapsed_seconds": 323.95
+    },
+    {
+      "machine_type": "valve",
+      "seed": 44,
+      "selected_epoch": 15,
+      "trained_epochs": 20,
+      "selected_validation_id_accuracy": 0.9936594202898551,
+      "selected_validation_loss": 0.015393045238496321,
+      "elapsed_seconds": 382.61
+    }
+  ]
+}

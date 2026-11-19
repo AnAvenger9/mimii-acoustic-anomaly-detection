@@ -1,0 +1,85 @@
+{
+  "state": "passed",
+  "verified_runs": 12,
+  "expected_runs": 12,
+  "verified_test_scores": 56142,
+  "verified_training_scores": 92844,
+  "source_snapshots_and_checkpoint_hashes_verified": true,
+  "thresholds_recomputed_from_training_normals": true,
+  "metrics_recomputed_from_saved_scores": true,
+  "checkpoint_selection_verified": true,
+  "runs": [
+    {
+      "machine_type": "fan",
+      "seed": 42,
+      "macro_auc": 0.7764231456735851,
+      "macro_pauc": 0.7319662744636578
+    },
+    {
+      "machine_type": "fan",
+      "seed": 43,
+      "macro_auc": 0.7800348432787062,
+      "macro_pauc": 0.7347317573980995
+    },
+    {
+      "machine_type": "fan",
+      "seed": 44,
+      "macro_auc": 0.7663909564266208,
+      "macro_pauc": 0.7244822167099758
+    },
+    {
+      "machine_type": "pump",
+      "seed": 42,
+      "macro_auc": 0.7940351030406968,
+      "macro_pauc": 0.7508457412729547
+    },
+    {
+      "machine_type": "pump",
+      "seed": 43,
+      "macro_auc": 0.7985722452273011,
+      "macro_pauc": 0.7635470205135424
+    },
+    {
+      "machine_type": "pump",
+      "seed": 44,
+      "macro_auc": 0.8071024778631024,
+      "macro_pauc": 0.7506561003885844
+    },
+    {
+      "machine_type": "slider",
+      "seed": 42,
+      "macro_auc": 0.8117749092644736,
+      "macro_pauc": 0.6974726322877648
+    },
+    {
+      "machine_type": "slider",
+      "seed": 43,
+      "macro_auc": 0.8153047449103892,
+      "macro_pauc": 0.6959472422797238
+    },
+    {
+      "machine_type": "slider",
+      "seed": 44,
+      "macro_auc": 0.812020741744889,
+      "macro_pauc": 0.6951236742042571
+    },
+    {
+      "machine_type": "valve",
+      "seed": 42,
+      "macro_auc": 0.9180215256055498,
+      "macro_pauc": 0.828011415743957
+    },
+    {
+      "machine_type": "valve",
+      "seed": 43,
+      "macro_auc": 0.9212808127325361,
+      "macro_pauc": 0.8081260952165921
+    },
+    {
+      "machine_type": "valve",
+      "seed": 44,
+      "macro_auc": 0.9201403953640342,
+      "macro_pauc": 0.805841900906867
+    }
+  ]
+}
