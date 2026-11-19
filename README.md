@@ -2,7 +2,7 @@
 
 Can a microphone flag a fault in a known machine using only examples of its healthy operation for training? On the original MIMII corpus, our four-model ensemble caught **7,989 of 9,900 faulty clips** and raised **654 false alarms on 8,814 healthy clips**. All evaluation clips are ten seconds long.
 
-[Read the six-page IEEE report](docs/report/README.md) · [Download the report](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/mimii_report.pdf) · [Viva slides and speaker notes](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/MIMII_Final_Viva_Package.zip)
+[Read the six-page IEEE report](docs/report/README.md) · [Download the report](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/mimii_report.pdf) ·
 
 ## Download trained models
 
