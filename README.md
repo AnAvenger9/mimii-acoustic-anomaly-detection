@@ -1,6 +1,6 @@
 # Acoustic fault detection on MIMII
 
-Can a microphone flag a fault in a known machine using only examples of its healthy operation for training? On the original MIMII corpus, our four-model ensemble caught **7,989 of 9,900 faulty clips** and raised **654 false alarms on 8,814 healthy clips**. All evaluation clips are ten seconds long.
+Can a microphone flag a fault in a known machine using only examples of its healthy operation for training? On the original MIMII corpus, **ResNet-18, EfficientNet-B0 and the wide acoustic CNN** detected **7,620 of 9,900 faulty clips** and raised **576 false alarms** on 8,814 healthy clips. **Adding XGBoost** detected **7,989 faults** and raised **654 false alarms** on those same clips. All evaluation clips are ten seconds long.
 
 [Read the six-page IEEE report](docs/report/README.md) · [Download the report](https://raw.githubusercontent.com/AnAvenger9/mimii-acoustic-anomaly-detection/main/docs/mimii_report.pdf) ·
 
@@ -32,9 +32,10 @@ All rows use training seed 42 on the same 18,714 test clips. AUC and standardize
 | XGBoost | 91.12% | 82.45% | 81.75% | 72.37% | 7.73% |
 | Five CNNs | 93.62% | 88.79% | 83.82% | 76.69% | 8.17% |
 | ResNet-18 + EfficientNet-B0 + XGBoost | 95.58% | 90.08% | 86.23% | 80.66% | 7.51% |
-| **Those three + wide acoustic CNN** | **95.66%** | **90.55%** | **86.29%** | **80.70%** | **7.42%** |
+| **ResNet-18 + EfficientNet-B0 + wide acoustic CNN** | **94.30%** | **89.39%** | **84.74%** | **76.97%** | **6.54%** |
+| **Same three CNNs + XGBoost** | **95.66%** | **90.55%** | **86.29%** | **80.70%** | **7.42%** |
 
-The four-member ensemble caught 397 more faulty clips and raised 66 fewer false alarms than the five-CNN ensemble. Adding the wide CNN to the three-member model accounted for just four extra detections and eight fewer false alarms. The 57 ensembles were compared on a previously inspected test set. A retrospective source-grouped check gave the selected ensemble 90.42% pAUC on the second half. Performance on new machines and recording sessions remains open. The DCASE 2020 autoencoder in the report is a published reference using the organizers’ split. [All combinations and grouped check](docs/results/ensemble_subsets_seed42/RESULTS.md)
+At their respective healthy-training cutoffs, adding XGBoost to the three CNNs caught 369 additional faulty clips and raised 78 more false alarms. The three CNNs had the highest observed pAUC among CNN-only subsets, and the hybrid had the highest overall. The 57 ensembles were compared on a previously inspected test set. A retrospective source-grouped check gave the four-model hybrid 90.42% pAUC on the second half. Performance on new machines and recording sessions remains open. The DCASE 2020 autoencoder in the report is a published reference using the organizers’ split. [All combinations and grouped check](docs/results/ensemble_subsets_seed42/RESULTS.md)
 
 ## Reproduce the report tables
 
@@ -58,6 +59,6 @@ To inspect each output interactively, install JupyterLab in the same environment
 | II · CNN parameters and layers | Notebook 02 constructs all five networks and runs a forward pass. This step additionally needs PyTorch and torchvision. |
 | III · Healthy machine-ID accuracy | Notebook 01 pools the exact correct/total counts from the checkpoint replay and LDA diagnostic. The CNN rows use validation clips and LDA uses healthy test clips. |
 | IV–V · Rankings and alarm decisions | Notebook 01 computes individual models and the original five-CNN ensemble from scores. Notebook 04 computes the other ensembles. Seeds 42–44 appear separately as a stability check for MobileNet and the compact and wide CNNs. |
-| VI · Results by machine | Notebook 04 breaks down the selected ensemble by machine type and writes all 63 configurations, per-machine results and the grouped check to `runs/ensemble_subsets_seed42/`. |
+| VI · Results by machine | Notebook 04 provides per-machine scores for both highlighted ensembles and writes all 63 configurations, per-machine results and the grouped check to `runs/ensemble_subsets_seed42/`. |
 
 For a full run from the original WAVs, including archive verification, feature extraction, ImageNet initialization and GPU training, follow the [training and reproduction guide](REPRODUCE.md). [Dataset source](https://zenodo.org/records/3384388)
